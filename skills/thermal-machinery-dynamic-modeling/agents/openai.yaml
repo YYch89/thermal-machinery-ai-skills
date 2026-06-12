@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thermal Machinery Dynamic Modeling"
+  short_description: "Build auditable dynamic thermodynamic models"
+  default_prompt: "Use $thermal-machinery-dynamic-modeling to plan a dynamic model. Start with topology, node ledger, component contracts, initialization, and validation."

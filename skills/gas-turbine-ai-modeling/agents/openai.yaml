@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gas Turbine AI Modeling"
+  short_description: "Build, audit, and repair gas turbine models"
+  default_prompt: "Use $gas-turbine-ai-modeling to build, audit, repair, or validate a staged MATLAB/Simulink gas turbine model."

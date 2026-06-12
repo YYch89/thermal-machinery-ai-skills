@@ -1,0 +1,35 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.autosave
+
+# MATLAB/Simulink generated artifacts
+examples/**/simulink/
+examples/**/slprj/
+*.slxc
+*.slx.*
+slprj/
+codegen/
+cache/
+*.asv
+
+# Private source models and documents should not be committed by default
+*.slx
+*.mdl
+*.mlx
+*.mat
+*.docx
+*.pptx
+*.pdf
+
+# Local private release denylist
+.release-denylist.local
+
+# Allow public documentation, synthetic CSV examples, and public MATLAB code
+!README.md
+!LICENSE
+!examples/**/*.csv
+!examples/**/*.md
+!examples/**/*.m

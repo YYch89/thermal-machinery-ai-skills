@@ -1,0 +1,13 @@
+function xdot = gt_simulink_plant_xdot(inputVector)
+%GT_SIMULINK_PLANT_XDOT Simulink wrapper for GT plant derivatives.
+
+GT_SIM = evalin('base', 'GT_SIM');
+x = inputVector(1:6);
+u = struct( ...
+    'Wf_cmd_kgps', inputVector(7), ...
+    'loadMode', 'dc_power', ...
+    'P_dc_load_W', inputVector(8), ...
+    'Tload_Nm', GT_SIM.GT.init.Tload0_Nm);
+
+xdot = evaluate_gt_dynamics(0, x, u, GT_SIM.GT, GT_SIM.dataRoot);
+end

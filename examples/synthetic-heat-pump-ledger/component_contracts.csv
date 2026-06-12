@@ -1,0 +1,5 @@
+component,inputs,outputs,parameters,states,residuals,validation_checks
+Evaporator,"HP0, AIR0","HP1, cooled_source_stream","UA_or_effectiveness, pressure_loss, superheat_target","optional wall temperature","refrigerant heat gain minus source-side heat loss","no impossible temperature crossing; outlet quality/superheat feasible"
+Compressor,"HP1, shaft_or_electric_power","HP2, compressor_work","isentropic_efficiency_or_map, pressure_ratio_or_condensing_pressure","optional shaft/electric dynamics","compressor work and outlet enthalpy relation","pressure rises; efficiency in range; discharge temperature feasible"
+Condenser,"HP2, AIR1","HP3, heated_sink_stream","UA_or_effectiveness, pressure_loss, subcooling_target","optional wall temperature","refrigerant heat rejection minus sink-side heat gain","no impossible temperature crossing; outlet quality/subcooling feasible"
+Expansion valve,HP3,HP0,"valve_coefficient_or_isenthalpic_assumption",none,"pressure drop and throttling relation","pressure decreases; outlet state finite and physically plausible"
