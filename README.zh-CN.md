@@ -1,5 +1,7 @@
 # Thermal Machinery AI Skills
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20666571.svg)](https://doi.org/10.5281/zenodo.20666571)
+
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 面向燃气轮机与耦合热力机械系统分阶段动态建模的 AI Agent 工作流。
@@ -10,6 +12,14 @@
 
 这不是简单提示词，也不是单纯代码生成。
 这个项目尝试把领域建模经验转化为 AI Agent 可复用的工程化建模工作流。
+
+## 引用
+
+如果你使用本项目，请引用：
+
+```text
+Wen, J. (2026). Thermal Machinery AI Skills (v0.1.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20666571
+```
 
 ## 为什么需要这个项目
 

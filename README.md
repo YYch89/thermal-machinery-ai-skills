@@ -1,5 +1,7 @@
 # Thermal Machinery AI Skills
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20666571.svg)](https://doi.org/10.5281/zenodo.20666571)
+
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 AI-agent workflows for staged dynamic modeling of gas turbines and coupled thermal-machinery systems.
@@ -10,6 +12,14 @@ It is one of the early open skillsets focused on AI-assisted dynamic modeling fo
 
 Not just prompts. Not just code generation.
 This project turns domain modeling experience into reusable AI-agent workflows.
+
+## Citation
+
+If you use this project, please cite:
+
+```text
+Wen, J. (2026). Thermal Machinery AI Skills (v0.1.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20666571
+```
 
 ## Why This Exists
 
