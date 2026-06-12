@@ -1,5 +1,7 @@
 # Thermal Machinery AI Skills
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 AI-agent workflows for staged dynamic modeling of gas turbines and coupled thermal-machinery systems.
 
 This repository provides open Codex skills, modeling procedures, validation checklists, and runnable synthetic examples that help AI agents move from engineering requirements to design-point calculation, steady-state closure, dynamic initialization, Simulink implementation, and smoke-check validation.
