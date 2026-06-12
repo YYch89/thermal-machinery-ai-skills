@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "Thermal Machinery AI Skills"
+authors:
+  - family-names: "Wen"
+    given-names: "Jiale"
+abstract: "AI-agent workflows for staged, auditable dynamic modeling of gas turbines and coupled thermal-machinery systems, including public Codex skills, validation checklists, and runnable synthetic MATLAB/Simulink examples."
+keywords:
+  - "AI agents"
+  - "thermal machinery"
+  - "gas turbines"
+  - "dynamic modeling"
+  - "MATLAB"
+  - "Simulink"
+  - "thermodynamics"
+license: "MIT"
+repository-code: "https://github.com/YYch89/thermal-machinery-ai-skills"
+url: "https://github.com/YYch89/thermal-machinery-ai-skills"
+version: "0.1.1"
+date-released: "2026-06-12"
