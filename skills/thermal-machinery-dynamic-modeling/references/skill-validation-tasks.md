@@ -13,10 +13,26 @@ Build a first-pass dynamic modeling workflow for a thermal power system with a c
 Expected behavior:
 
 - Ask for or list missing boundary, fluid, topology, and fidelity decisions.
+- Create or request a depth and simplification contract.
 - Build topology and node ledger before equations.
 - Define component contracts and guessed states.
 - Mark missing maps, heat-transfer data, pressure losses, and validation data.
 - Refuse to jump directly to a dynamic simulation.
+
+## Task 1B: Fidelity Triage
+
+Prompt:
+
+```text
+Build whatever level of model is reasonable for a thermal system with a heat source, heat exchanger, turbine, and load. I am not sure whether I need a design-point model or full dynamics.
+```
+
+Expected behavior:
+
+- Ask for or state the model-depth options.
+- Choose the lowest useful stage when the user delegates.
+- Separate design-point, steady, reduced dynamic, and detailed dynamic claims.
+- State allowed simplifications and forbidden claims.
 
 ## Task 2: Node Ledger Challenge
 
@@ -52,8 +68,9 @@ Expected behavior:
 
 | Failure observed | Reference to improve |
 | --- | --- |
-| Starts with code instead of topology | `workflow-and-scope.md` |
+| Starts with code instead of topology or depth contract | `workflow-and-scope.md` |
 | Mixes streams or units | `thermodynamic-node-stream-ledger.md` |
 | Component has no clear inputs or residuals | `component-contracts.md` |
 | Dynamic model drifts from design point | `dynamic-initialization.md` |
 | Claims completion from run success alone | `validation-and-deliverables.md` |
+| Reuses control assumptions without physical authority | `component-contracts.md` and `workflow-and-scope.md` |

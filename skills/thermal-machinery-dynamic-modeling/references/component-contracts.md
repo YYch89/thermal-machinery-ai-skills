@@ -12,6 +12,7 @@ For every component, record:
 - algebraic equations;
 - dynamic states, if any;
 - residuals and closure targets;
+- closure depth: prescribed target, algebraic equilibrium, steady correlation, reduced progress state, or inventory-based dynamic model when relevant;
 - validation checks;
 - source of equations or assumptions.
 
@@ -41,7 +42,7 @@ Inputs: hot and cold inlet states, flow arrangement, UA/effectiveness or target 
 
 Outputs: hot and cold outlet states, heat duty, terminal temperature differences.
 
-Checks: no unexplained temperature crossing, heat-duty mismatch, pressure-loss direction, material and process limits.
+Checks: no unexplained temperature crossing, heat-duty mismatch, pressure-loss direction, heat-grade suitability, material and process limits.
 
 ### Mixer, Splitter, Valve
 
@@ -55,8 +56,12 @@ Outputs: products, heat release or absorption, outlet state, pressure loss, conv
 
 Checks: element balance, nonnegative species, oxygen or reactant availability, temperature limits, kinetic or equilibrium provenance.
 
+Do not infer dynamic rate constants, phase-transfer coefficients, or distributed heat-transfer parameters from a single rated point unless the model is explicitly calibrated and labeled.
+
 ### Volume, Plenum, Thermal Capacity
 
 States: pressure, mass, species inventory, wall temperature, fluid temperature, or stored energy.
 
 Checks: state derivatives near zero at intended steady initialization, finite properties, no hidden controller action required to stabilize the plant.
+
+Control variables must map to a physical actuator, shaft/load interaction, heat source, valve, electric device, or storage term. Do not transfer a control strategy between configurations without checking that this authority exists.

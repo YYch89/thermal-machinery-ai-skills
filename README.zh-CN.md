@@ -10,6 +10,8 @@
 
 这是较早公开的、面向复杂热力机械系统 AI 辅助动态建模的 skillset 之一。第一个公开运行示例是一个合成双轴燃气轮机模型，已使用 MATLAB/Simulink R2023a 完成运行级验证。
 
+通用热力机械工作流现在会明确要求 AI Agent 先定义模型深度和允许简化程度，把拓扑作为设计变量处理，检查热品位和压力兼容性，并在声称动态或控制效果前确认控制变量具备真实物理执行权限。
+
 这不是简单提示词，也不是单纯代码生成。
 这个项目尝试把领域建模经验转化为 AI Agent 可复用的工程化建模工作流。
 
@@ -27,6 +29,17 @@ Wen, J. (2026). Thermal Machinery AI Skills (v0.1.1) [Software]. Zenodo. https:/
 
 这些 skills 的目标是让 AI Agent 放慢速度，按层次建立模型，并让每一个压力、温度、质量流量、组分、功率平衡、状态变量和假设都可以被审查。
 
+## 建模原则
+
+公开版 skills 强调几条跨热力机械领域通用的规则：
+
+- 实现前先定义模型深度和简化契约：概念拓扑、设计点、可执行设计点复现、稳态对象、简化动态对象、详细动态对象，或控制/优化对象。
+- 拓扑是设计变量，不只是示意图。部件顺序、分流/混合、热回收路径、压力等级、轴系、负载和执行机构路径都会决定系统是否可行。
+- 不只检查能量守恒，还要检查能量品质和热品位。一个模型可能总能量守恒，但把高品位热量浪费在低温需求上，或者强行指定不可实现的换热器端差。
+- 区分简化闭合和详细动态。平衡求解、稳态关联式、简化进度变量、库存型动态状态需要不同证据。
+- 控制变量必须有物理执行权限。只有当拓扑中存在真实执行机构、负载、轴系、热源、阀门、电气装置或储能环节时，控制器才有物理意义。
+- 模型能运行不等于已经验证。验证需要守恒残差、初始残差、数据来源、约束信号和明确容差。
+
 ## 包含的 Skills
 
 ### `thermal-machinery-dynamic-modeling`
@@ -34,7 +47,9 @@ Wen, J. (2026). Thermal Machinery AI Skills (v0.1.1) [Software]. Zenodo. https:/
 通用热力机械动态建模工作流 skill。它引导 AI Agent 完成：
 
 - 建模范围与需求梳理；
+- 模型深度和简化契约；
 - 系统拓扑和节点工质流台账；
+- 热品位、压力兼容性和执行机构权限检查；
 - 部件接口、输入输出和方程约定；
 - 设计点与稳态一致性检查；
 - 动态状态选择和动态初始化；
@@ -100,7 +115,7 @@ R2023_PUBLIC_GT_README_SCRIPTS_COMPLETED
 
 ```text
 Use the thermal-machinery-dynamic-modeling skill to plan a dynamic model.
-Start with scope, topology, node ledger, component contracts, dynamic initialization, and validation gates.
+Start with scope, model-depth contract, topology, node ledger, component contracts, dynamic initialization, and validation gates.
 ```
 
 对于燃气轮机：
@@ -135,9 +150,13 @@ Simulink 模型由脚本在本地生成，不提交到仓库中。
 | thermal machinery | 热力机械 |
 | coupled thermal-machinery systems | 耦合热力机械系统 |
 | staged dynamic modeling | 分阶段动态建模 |
+| model-depth contract | 模型深度契约 |
+| simplification contract | 简化契约 |
 | design-point calculation | 设计点计算 |
 | steady-state closure | 稳态闭合校核 |
 | dynamic initialization | 动态初始化 |
+| energy quality / heat grade | 能量品质 / 热品位 |
+| control authority | 控制权限 / 执行机构权限 |
 | smoke-check validation | 运行级冒烟检查 |
 | node ledger / stream ledger | 节点台账 / 工质流台账 |
 | component contract | 部件接口与方程约定 |

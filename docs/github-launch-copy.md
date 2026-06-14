@@ -45,6 +45,8 @@ energy-systems
 Thermal Machinery AI Skills is an open AI-agent skillset for staged, auditable dynamic modeling of gas turbines and coupled thermal-machinery systems.
 
 It teaches AI agents to work like a modeling engineer: start from requirements, build a design point, close the steady state, initialize dynamics, generate MATLAB/Simulink artifacts, and run smoke-check validation before adding control or optimization.
+
+The current workflow also asks agents to state the model-depth and simplification contract, treat topology as a design variable, check heat grade and pressure compatibility, and verify physical control authority before making dynamic or control claims.
 ```
 
 ## Safe "First" Claim
@@ -67,6 +69,8 @@ The world's first AI skill for thermal-system modeling.
 我开源了一个面向复杂热力机械动态建模的 AI Agent Skill 项目：Thermal Machinery AI Skills。
 
 它不是简单提示词，也不是单纯让 AI 写代码，而是把能动领域的建模流程沉淀成 AI 可执行的科研工作流：需求澄清、设计点计算、稳态校核、动态初始化、Simulink 建模、控制接入和 smoke-check 验证。
+
+新版通用热力机械 skill 进一步强调：先明确模型深度和简化边界，把拓扑作为设计变量，检查热品位、压力兼容性和控制执行权限，再进入动态或控制建模。
 
 第一版聚焦燃气轮机动态建模，并附带一个可运行的合成双轴燃气轮机 MATLAB/Simulink 示例，已用 MATLAB/Simulink R2023a 完成运行级 smoke check。
 
@@ -97,4 +101,22 @@ Runtime notes:
 - repository release checks passed;
 - gas-turbine MATLAB/Simulink smoke checks verified with MATLAB/Simulink R2023a;
 - generated Simulink binaries and cache files are intentionally excluded.
+```
+
+## v0.1.1 Release Notes
+
+```text
+Workflow refinement release.
+
+Adds and strengthens:
+- model-depth and simplification contract in the general thermal-machinery skill;
+- topology-as-design-variable guidance;
+- heat-grade and energy-quality checks for heat recovery and process-heating paths;
+- physical control-authority checks before controller reuse or control claims;
+- clearer reduced-versus-detailed dynamic model boundaries.
+
+Runtime and packaging notes:
+- repository release checks passed;
+- public examples remain synthetic and reduced;
+- no private project files, generated Simulink binaries, or proprietary data are included.
 ```

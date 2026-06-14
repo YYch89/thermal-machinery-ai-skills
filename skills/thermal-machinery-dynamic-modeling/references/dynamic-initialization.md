@@ -14,6 +14,7 @@ Create an initial-condition registry for:
 - controller states;
 - delays, memories, transport delays, unit delays, transfer functions, and integrators;
 - lookup-table schedules and normalization constants.
+- controller or schedule references and the physical actuator or load they affect.
 
 ## Mapping Rule
 
@@ -36,3 +37,5 @@ At the intended initial operating point:
 - shaft acceleration should be near zero for steady shaft speeds;
 - thermal state derivatives should be near zero unless a transient warm-up is intended;
 - controller action should not be required to pull an untrimmed plant back to the operating point.
+
+If an imposed outlet temperature, pressure, composition, or flow is required only because the model cannot close a component internally, label it as a boundary condition or unresolved closure rather than a validated initial condition.

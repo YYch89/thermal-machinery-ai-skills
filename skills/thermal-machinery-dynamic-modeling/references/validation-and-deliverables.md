@@ -5,6 +5,7 @@ Use this file before claiming a model is complete.
 ## Minimum Checks
 
 - Topology matches the requested system boundary and working-fluid paths.
+- Model depth, fidelity target, and simplifications are stated before validation claims are chosen.
 - Node ledger covers every active stream and node.
 - Units and flow/composition bases are explicit.
 - Mass balance closes.
@@ -12,9 +13,11 @@ Use this file before claiming a model is complete.
 - Energy balance closes for components and the whole system.
 - Pressure changes are physically directional except across pumps, compressors, and explicit pressure sources.
 - Heat exchangers have feasible terminal temperature differences.
+- Heat-grade or energy-quality limits are checked when heat recovery or process heating order matters.
 - Dynamic states initialize near the design or trim point.
 - Simulations have no `NaN`/`Inf`, negative impossible states, or hidden controller-only stabilization.
 - Control or optimization is judged against constraints and an open-loop or baseline case.
+- Manipulated variables have physical actuator, load, shaft, heat-source, or storage authority in the selected topology.
 
 ## Acceptance Starting Points
 
@@ -34,6 +37,7 @@ These are engineering starting points, not universal certification criteria.
 Provide:
 
 - scope and assumptions;
+- model depth and simplification contract;
 - topology or stream-routing description;
 - thermodynamic node and stream ledger;
 - component contracts;
